@@ -7,3 +7,10 @@ def xiaoxiaobai():
             header = {'User-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36'}
             response = requests.post('http://www.17k.com/list/1398783.html',headers = header)
             f.write(response.text)
+
+
+import requests
+a = requests.get('http://news.baidu.com/')
+import re
+res = re.findall('\w+://\S*',a.text,re.S)
+print(res)
